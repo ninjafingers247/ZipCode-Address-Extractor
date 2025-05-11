@@ -41,7 +41,9 @@ def generate_offsets(center_lat, center_lon, offset_lat=0.03, offset_lon=0.03):
 
 # Step 4: Reverse geocode lat/lon → address + state
 def reverse_geocode(lat, lon):
-    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lon}&key=AIzaSyAvOgucnkssPgT0i3KTOK1NOncFKj4c428"
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lon}&key=YOUR_API_KEY"
+    # Replace YOUR_API_KEY with your actual Google Maps API key
+    # Make sure to handle the API key securely and not hard-code it in production code
     response = requests.get(url)
     if response.status_code == 200:
         result = response.json()
